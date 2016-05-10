@@ -1,9 +1,56 @@
+import random
+
+
 class Potential:
     def __init__(self, input):
         # check if inup instance or file
 
         # input is file
         self.read(input)
+
+    def __getitem__(self, key):
+        s = key[0]-1  # section
+        r = key[1]-1  # record
+        if s != 0:
+            f = key[2]-1  # field
+
+        if s == 0:
+            return self.general_record[r]
+        elif s == 1:
+            return self.atomic_record[r][f]
+        elif s == 2:
+            return self.bond_record[r][f]
+        elif s == 3:
+            return self.odiagonal_record[r][f]
+        elif s == 4:
+            return self.angle_record[r][f]
+        elif s == 5:
+            return self.torsion_record[r][f]
+        elif s == 6:
+            return self.hbond_record[r][f]
+        else:
+            None
+
+    def __setitem__(self, key, value):
+        s = key[0]-1  # section
+        r = key[1]-1  # record
+        if s != 0:
+            f = key[2]-1  # field
+
+        if s == 0:
+            self.general_record[r] = value
+        elif s == 1:
+            self.atomic_record[r][f] = value
+        elif s == 2:
+            self.bond_record[r][f] = value
+        elif s == 3:
+            self.odiagonal_record[r][f] = value
+        elif s == 4:
+            self.angle_record[r][f] = value
+        elif s == 5:
+            self.torsion_record[r][f] = value
+        elif s == 6:
+            self.hbond_record[r][f] = value
 
     def read(self, input_name):
         self.input_file = open(input_name, 'r')
@@ -451,3 +498,44 @@ class Potential:
 
             line += '{:>35}\n'.format('')
             output_file.write(line)
+
+    def set_random(self, param, range_min, range_max):
+        self[(param)] = random.uniform(range_min, range_max)
+
+class Param_item:
+    def __init__(self):
+        self.item_list = []
+
+class Param:
+    def __init__(self, input=None):
+        self.parmaeters = {}
+        if input:
+            self.read(input)
+
+    def read(self, input_name):
+        self.input_file = open(input_name, 'r')
+
+        self.input_file.close()
+
+    def add(self, key, step, value_min, value_max, comment=None):
+        if not comment:
+            comment = "!no-comment"
+
+        if '!' not in comment:
+            comment = '!' + comment
+        if '\n' not in comment:
+            comment = comment + '\n'
+
+        if len(key) == 2:
+            key_string = '{}-{}'.format(key[0], key[1])
+        elif len(key) == 3:
+            key_string = '{}-{}-{}'.format(key[0], key[1], key[2])
+        else:
+            return None
+
+        self.parameters[key_string] = [step, value_min, value_max, comment]
+
+    def write(self, output_name):
+        output_file = open(output_name, 'w')
+
+        output_file.write
