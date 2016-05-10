@@ -270,7 +270,11 @@ class Potential:
         output_file = self.output_file
 
         # comment
-        line = self.general_comment + '\n'
+        if '\n' in self.general_comment:
+            line = self.general_comment
+        else:
+            line = self.general_comment + '\n'
+
         output_file.write(line)
 
         line = '{:>3}{:>7}{}\n'.format(self.general_count,
@@ -309,22 +313,22 @@ class Potential:
                 line += '{:>9.4f}'.format(atomic_record[cr])
                 cr += 1
 
-            line += '\n{:>3}'.format('')
+            line += '{:>5}\n{:>3}'.format('', '')
             for i in range(8):
                 line += '{:>9.4f}'.format(atomic_record[cr])
                 cr += 1
 
-            line += '\n{:>3}'.format('')
+            line += '{:>5}\n{:>3}'.format('', '')
             for i in range(8):
                 line += '{:>9.4f}'.format(atomic_record[cr])
                 cr += 1
 
-            line += '\n{:>3}'.format('')
+            line += '{:>5}\n{:>3}'.format('', '')
             for i in range(8):
                 line += '{:>9.4f}'.format(atomic_record[cr])
                 cr += 1
 
-            line += '\n'
+            line += '{:>5}\n'.format('')
 
             output_file.write(line)
 
@@ -349,12 +353,12 @@ class Potential:
                 line += '{:>9.4f}'.format(bond_record[cr])
                 cr += 1
 
-            line += '\n{:>6}'.format('')
+            line += '{:>2}\n{:>6}'.format('', '')
             for i in range(8):
                 line += '{:>9.4f}'.format(bond_record[cr])
                 cr += 1
 
-            line += '\n'
+            line += '{:>2}\n'.format('')
             output_file.write(line)
 
     def _write_off_diagonal(self):
@@ -376,7 +380,7 @@ class Potential:
             for i in range(6):
                 line += '{:>9.4f}'.format(odiagonal_record[i])
 
-            line += '\n'
+            line += '{:>20}\n'.format('')
             output_file.write(line)
 
     def _write_angle(self):
@@ -399,7 +403,7 @@ class Potential:
             for i in range(7):
                 line += '{:>9.4f}'.format(angle_record[i])
 
-            line += '\n'
+            line += '{:>8}\n'.format('')
             output_file.write(line)
 
     def _write_torsion(self):
@@ -423,7 +427,7 @@ class Potential:
             for i in range(7):
                 line += '{:>9.4f}'.format(torsion_record[i])
 
-            line += '\n'
+            line += '{:>5}\n'.format('')
             output_file.write(line)
 
     def _write_hbond(self):
@@ -445,5 +449,5 @@ class Potential:
             for i in range(4):
                 line += '{:>9.4f}'.format(hbond_record[i])
 
-            line += '\n'
+            line += '{:>35}\n'.format('')
             output_file.write(line)
