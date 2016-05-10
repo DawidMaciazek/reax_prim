@@ -14,6 +14,7 @@ class Potential:
         self._read_angle()
         self._read_torsion()
         self._read_hbond()
+
         self.input_file.close()
 
     def _read_general(self):
@@ -57,7 +58,6 @@ class Potential:
             atomic_comment.append(' '.join(sp))
 
         self.atomic_comment = atomic_comment
-        print(atomic_comment)
 
         # loop over all specified atoms
         atomic_element = []
@@ -150,7 +150,7 @@ class Potential:
 
             odiagonal_record_part = []
             for index_odiagonal in range(6):
-                odiagonal_record_part.append(sp[index_odiagonal + 2])
+                odiagonal_record_part.append(float(sp[index_odiagonal + 2]))
 
             odiagonal_record.append(odiagonal_record_part)
 
@@ -259,6 +259,10 @@ class Potential:
         self._write_general()
         self._write_atomic()
         self._write_bond()
+        self._write_off_diagonal()
+        self._write_angle()
+        self._write_torsion()
+        self._write_hbond()
 
         self.output_file.close()
 
@@ -325,4 +329,121 @@ class Potential:
             output_file.write(line)
 
     def _write_bond(self):
-        pass
+        output_file = self.output_file
+        bond_count = self.bond_count
+
+        # comment line
+        line = '{:>3}{:>6}{}\n'.format(bond_count, '',
+                                       self.bond_comment[0])
+        line += '{:>22}{}\n'.format('', self.bond_comment[1])
+        output_file.write(line)
+
+        # bonds
+        for bond in range(bond_count):
+            bond_record = self.bond_record[bond]
+            bond_atom = self.bond_atom[bond]
+            line = '{:>3}{:>3}'.format(bond_atom[0], bond_atom[1])
+
+            cr = 0
+            for i in range(8):
+                line += '{:>9.4f}'.format(bond_record[cr])
+                cr += 1
+
+            line += '\n{:>6}'.format('')
+            for i in range(8):
+                line += '{:>9.4f}'.format(bond_record[cr])
+                cr += 1
+
+            line += '\n'
+            output_file.write(line)
+
+    def _write_off_diagonal(self):
+        output_file = self.output_file
+        odiagonal_count = self.odiagonal_count
+
+        # comment line
+        line = '{:>3}{:>4}{}\n'.format(odiagonal_count, '',
+                                       self.odiagonal_comment)
+
+        output_file.write(line)
+
+        # off diagonal
+        for odiagonal in range(odiagonal_count):
+            odiagonal_atom = self.odiagonal_atom[odiagonal]
+            odiagonal_record = self.odiagonal_record[odiagonal]
+            line = '{:>3}{:>3}'.format(odiagonal_atom[0], odiagonal_atom[1])
+
+            for i in range(6):
+                line += '{:>9.4f}'.format(odiagonal_record[i])
+
+            line += '\n'
+            output_file.write(line)
+
+    def _write_angle(self):
+        output_file = self.output_file
+        angle_count = self.angle_count
+
+        # comment line
+        line = '{:>3}{:>4}{}\n'.format(angle_count, '',
+                                       self.angle_comment)
+
+        output_file.write(line)
+
+        # off diagonal
+        for angle in range(angle_count):
+            angle_atom = self.angle_atom[angle]
+            angle_record = self.angle_record[angle]
+            line = '{:>3}{:>3}{:>3}'.format(angle_atom[0], angle_atom[1],
+                                       angle_atom[2])
+
+            for i in range(7):
+                line += '{:>9.4f}'.format(angle_record[i])
+
+            line += '\n'
+            output_file.write(line)
+
+    def _write_torsion(self):
+        output_file = self.output_file
+        torsion_count = self.torsion_count
+
+        # comment line
+        line = '{:>3}{:>4}{}\n'.format(torsion_count, '',
+                                       self.torsion_comment)
+
+        output_file.write(line)
+
+        # off diagonal
+        for torsion in range(torsion_count):
+            torsion_atom = self.torsion_atom[torsion]
+            torsion_record = self.torsion_record[torsion]
+            line = '{:>3}{:>3}{:>3}{:>3}'.format(torsion_atom[0],
+                                                 torsion_atom[1],
+                                                 torsion_atom[2],
+                                                 torsion_atom[3])
+            for i in range(7):
+                line += '{:>9.4f}'.format(torsion_record[i])
+
+            line += '\n'
+            output_file.write(line)
+
+    def _write_hbond(self):
+        output_file = self.output_file
+        hbond_count = self.hbond_count
+
+        # comment line
+        line = '{:>3}{:>4}{}\n'.format(hbond_count, '',
+                                       self.hbond_comment)
+
+        output_file.write(line)
+
+        # off diagonal
+        for hbond in range(hbond_count):
+            hbond_atom = self.hbond_atom[hbond]
+            hbond_record = self.hbond_record[hbond]
+            line = '{:>3}{:>3}{:>3}'.format(hbond_atom[0],  hbond_atom[1],
+                                            hbond_atom[2])
+            for i in range(4):
+                line += '{:>9.4f}'.format(hbond_record[i])
+
+            line += '\n'
+            output_file.write(line)
