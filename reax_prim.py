@@ -1,4 +1,5 @@
 import random
+from collections import OrderedDict
 
 
 class Potential:
@@ -502,40 +503,69 @@ class Potential:
     def set_random(self, param, range_min, range_max):
         self[(param)] = random.uniform(range_min, range_max)
 
-class Param_item:
-    def __init__(self):
-        self.item_list = []
 
 class Param:
     def __init__(self, input=None):
-        self.parmaeters = {}
+        self.params = OrderedDict()
         if input:
             self.read(input)
 
     def read(self, input_name):
-        self.input_file = open(input_name, 'r')
+        input_file = open(input_name, 'r')
 
-        self.input_file.close()
+        for line in input_file:
+            sp = line.split()
+            if len(sp) < 7:
+                comment = None
+            else:
+                comment = ' '.join(sp[6:])
+
+            self.add((int(sp[0]), int(sp[1]), int(sp[2])), float(sp[3]),
+                     float(sp[4]), float(sp[5]), comment)
+
+        input_file.close()
 
     def add(self, key, step, value_min, value_max, comment=None):
         if not comment:
             comment = "!no-comment"
-
         if '!' not in comment:
             comment = '!' + comment
-        if '\n' not in comment:
-            comment = comment + '\n'
+        if '\n' in comment:
+            comment = comment.rstrip()
 
         if len(key) == 2:
-            key_string = '{}-{}'.format(key[0], key[1])
-        elif len(key) == 3:
-            key_string = '{}-{}-{}'.format(key[0], key[1], key[2])
-        else:
-            return None
+            key = (key[0], key[1], 1)
 
-        self.parameters[key_string] = [step, value_min, value_max, comment]
+        key_string = '{0}-{1}-{2}'.format(*key)
+        self.params[key_string] = [[key[0], key[1], key[2]],
+                                   step, value_min, value_max, comment]
 
-    def write(self, output_name):
+    def write_seq(self, output_name, repeat):
         output_file = open(output_name, 'w')
 
-        output_file.write
+        params = self.params
+        repeat_line = ''
+        for key in params.keys():
+            par = params[key]
+            line = '{:>3}{:>3}{:>3}{:>8.4f}{:>10.4f}{:>10.4f}{:<4}{}\n'.format(
+                par[0][0], par[0][1], par[0][2], par[1], par[2], par[3], '',
+                par[4])
+
+            repeat_line += line
+
+        for rep in range(repeat):
+            output_file.write(repeat_line)
+
+        output_file.close()
+
+    def write_random_order(self, output_name, repeat):
+        params = self.params
+
+        output_file = open(output_name, 'w')
+        for i in range(repeat):
+            par = random.choice(list(params.values()))
+            line = '{:>3}{:>3}{:>3}{:>8.4f}{:>10.4f}{:>10.4f}{:<4}{}\n'.format(
+                par[0][0], par[0][1], par[0][2], par[1], par[2], par[3], '',
+                par[4])
+
+            output_file.write(line)
