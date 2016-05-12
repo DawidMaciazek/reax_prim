@@ -1,0 +1,380 @@
+BIOGRF 200
+DESCRP h3coh_min
+REMARK h3coh
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  40.71865  39.70621  40.11936    C   1 1 -0.12323
+HETATM     2 O                  39.33815  40.31081  39.92694    O   1 1 -0.50909
+HETATM     3 H                  40.57098  38.64567  40.40858    H   1 1  0.10783
+HETATM     4 H                  38.93362  39.81591  39.25474    H   1 1  0.27887
+HETATM     5 H                  41.19390  40.30466  40.92459    H   1 1  0.10783
+HETATM     6 H                  41.25105  39.79810  39.15070    H   1 1  0.13779
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     3     5     6
+CONECT     2     1     4
+CONECT     3     1
+CONECT     4     2
+CONECT     5     1
+CONECT     6     1
+UNIT ENERGY   kcal
+ENERGY        -499.261772
+END
+
+BIOGRF 200
+DESCRP co40                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  0.8000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  40.40848  39.94429  39.74226    C   1 1  0.28168
+HETATM     2 O                  39.62613  40.09939  39.83918    O   1 1 -0.76241
+HETATM     3 H                  40.92567  39.08221  42.21364    H   1 1  0.05760
+HETATM     4 H                  37.50569  40.41615  41.38459    H   1 1  0.27555
+HETATM     5 H                  41.10102  39.87493  42.33148    H   1 1  0.05760
+HETATM     6 H                  41.53876  39.71247  39.69120    H   1 1  0.08999
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     6
+CONECT     2     1
+CONECT     3     5
+CONECT     4
+CONECT     5     3
+CONECT     6     1
+UNIT ENERGY   kcal
+ENERGY        -344.078034
+END
+ 
+BIOGRF 200
+DESCRP co41                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  0.9000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  40.42444  39.74794  40.10334    C   1 1  0.13120
+HETATM     2 O                  39.52876  39.86335  40.07452    O   1 1 -0.44874
+HETATM     3 H                  41.52864  39.45637  40.11454    H   1 1  0.10589
+HETATM     4 H                  37.90601  41.82903  39.24568    H   1 1  0.00000
+HETATM     5 H                  41.48059  42.12559  39.47898    H   1 1  0.10583
+HETATM     6 H                  41.51147  41.75856  38.74777    H   1 1  0.10583
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     3
+CONECT     2     1
+CONECT     3     1
+CONECT     4
+CONECT     5     6
+CONECT     6     5
+UNIT ENERGY   kcal
+ENERGY        -353.450059
+END
+ 
+BIOGRF 200
+DESCRP co42                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  1.0000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  40.51804  40.14806  40.18301    C   1 1  0.06615
+HETATM     2 O                  39.52348  40.19718  40.05675    O   1 1 -0.61438
+HETATM     3 H                  41.19023  37.76598  39.16366    H   1 1  0.08236
+HETATM     4 H                  37.32463  39.38858  38.77728    H   1 1  0.26840
+HETATM     5 H                  41.52392  39.70872  40.45882    H   1 1  0.11511
+HETATM     6 H                  41.35737  38.24448  38.52082    H   1 1  0.08236
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     5
+CONECT     2     1
+CONECT     3     6
+CONECT     4
+CONECT     5     1
+CONECT     6     3
+UNIT ENERGY   kcal
+ENERGY        -365.320620
+END
+ 
+BIOGRF 200
+DESCRP co43                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  1.1000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  40.56841  40.14882  40.32490    C   1 1 -0.00152
+HETATM     2 O                  39.51240  40.19900  40.00037    O   1 1 -0.57195
+HETATM     3 H                  40.96830  37.67428  39.11063    H   1 1  0.09107
+HETATM     4 H                  37.32605  39.33405  38.66066    H   1 1  0.26932
+HETATM     5 H                  41.59865  39.92806  39.91262    H   1 1  0.12202
+HETATM     6 H                  41.07944  38.13343  38.44227    H   1 1  0.09107
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     5
+CONECT     2     1
+CONECT     3     6
+CONECT     4
+CONECT     5     1
+CONECT     6     3
+UNIT ENERGY   kcal
+ENERGY        -378.899057
+END
+ 
+BIOGRF 200
+DESCRP co44                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  1.2000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  40.56331  40.05142  40.25252    C   1 1 -0.04928
+HETATM     2 O                  39.47401  40.12037  39.75320    O   1 1 -0.53519
+HETATM     3 H                  41.63406  37.90948  39.64539    H   1 1  0.09491
+HETATM     4 H                  37.08182  40.43527  41.15892    H   1 1  0.27098
+HETATM     5 H                  40.98450  40.74490  41.05034    H   1 1  0.09491
+HETATM     6 H                  41.94207  38.38767  39.05633    H   1 1  0.12367
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     5
+CONECT     2     1
+CONECT     3     6
+CONECT     4
+CONECT     5     1
+CONECT     6     3
+UNIT ENERGY   kcal
+ENERGY        -384.207946
+END
+ 
+BIOGRF 200
+DESCRP co45                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  1.3000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  39.97234  39.95979  40.67863    C   1 1 -0.06548
+HETATM     2 O                  39.99545  40.09412  39.35206    O   1 1 -0.52746
+HETATM     3 H                  39.41595  38.96235  40.96832    H   1 1  0.09691
+HETATM     4 H                  40.48816  39.25642  38.98155    H   1 1  0.27368
+HETATM     5 H                  39.42374  40.88270  41.16477    H   1 1  0.09691
+HETATM     6 H                  41.07369  39.88340  41.09045    H   1 1  0.12544
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     3     5     6
+CONECT     2     1     4
+CONECT     3     1
+CONECT     4     2
+CONECT     5     1
+CONECT     6     1
+UNIT ENERGY   kcal
+ENERGY        -421.297768
+END
+ 
+BIOGRF 200
+DESCRP co46                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  1.4000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  40.66935  40.21323  39.81244    C   1 1 -0.10965
+HETATM     2 O                  39.38860  39.74729  40.19326    O   1 1 -0.50968
+HETATM     3 H                  41.41505  39.38202  40.00810    H   1 1  0.10422
+HETATM     4 H                  38.76210  40.47595  40.01732    H   1 1  0.27747
+HETATM     5 H                  40.91611  41.13201  40.42769    H   1 1  0.10422
+HETATM     6 H                  40.64232  40.48255  38.71228    H   1 1  0.13342
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     3     5     6
+CONECT     2     1     4
+CONECT     3     1
+CONECT     4     2
+CONECT     5     1
+CONECT     6     1
+UNIT ENERGY   kcal
+ENERGY        -482.034999
+END
+ 
+BIOGRF 200
+DESCRP co47                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  1.5000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  40.71721  39.80456  40.22096    C   1 1 -0.14453
+HETATM     2 O                  39.34618  40.18507  39.74214    O   1 1 -0.50302
+HETATM     3 H                  40.63057  38.81357  40.71668    H   1 1  0.11260
+HETATM     4 H                  38.80592  40.21934  40.49994    H   1 1  0.28233
+HETATM     5 H                  41.04725  40.58969  40.93505    H   1 1  0.11260
+HETATM     6 H                  41.35543  39.76674  39.31054    H   1 1  0.14003
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     3     5     6
+CONECT     2     1     4
+CONECT     3     1
+CONECT     4     2
+CONECT     5     1
+CONECT     6     1
+UNIT ENERGY   kcal
+ENERGY        -498.992082
+END
+ 
+BIOGRF 200
+DESCRP co48                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  1.6000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  40.77021  39.79488  40.22453    C   1 1 -0.17292
+HETATM     2 O                  39.30073  40.19354  39.74022    O   1 1 -0.49328
+HETATM     3 H                  40.67398  38.80542  40.70439    H   1 1  0.11844
+HETATM     4 H                  38.79810  40.20801  40.50661    H   1 1  0.28397
+HETATM     5 H                  41.07910  40.58020  40.93616    H   1 1  0.11844
+HETATM     6 H                  41.37851  39.77637  39.30309    H   1 1  0.14535
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     3     5     6
+CONECT     2     1     4
+CONECT     3     1
+CONECT     4     2
+CONECT     5     1
+CONECT     6     1
+UNIT ENERGY   kcal
+ENERGY        -495.712393
+END
+ 
+BIOGRF 200
+DESCRP co49                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  1.7000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  40.81349  39.78230  40.26120    C   1 1 -0.19270
+HETATM     2 O                  39.26588  40.20416  39.70735    O   1 1 -0.48483
+HETATM     3 H                  40.68303  38.79811  40.73660    H   1 1  0.12182
+HETATM     4 H                  38.76595  40.21326  40.46881    H   1 1  0.28585
+HETATM     5 H                  41.08190  40.57535  40.97580    H   1 1  0.12182
+HETATM     6 H                  41.43672  39.76451  39.35427    H   1 1  0.14804
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     3     5     6
+CONECT     2     1     4
+CONECT     3     1
+CONECT     4     2
+CONECT     5     1
+CONECT     6     1
+UNIT ENERGY   kcal
+ENERGY        -487.437107
+END
+ 
+BIOGRF 200
+DESCRP co50                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  1.8000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  40.87038  39.77116  40.25676    C   1 1 -0.20899
+HETATM     2 O                  39.21687  40.21357  39.71212    O   1 1 -0.47801
+HETATM     3 H                  40.72619  38.78816  40.72398    H   1 1  0.12477
+HETATM     4 H                  38.76634  40.20808  40.49766    H   1 1  0.28757
+HETATM     5 H                  41.12381  40.57095  40.96491    H   1 1  0.12477
+HETATM     6 H                  41.45194  39.76723  39.32603    H   1 1  0.14989
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     3     5     6
+CONECT     2     1     4
+CONECT     3     1
+CONECT     4     2
+CONECT     5     1
+CONECT     6     1
+UNIT ENERGY   kcal
+ENERGY        -477.086383
+END
+ 
+BIOGRF 200
+DESCRP co51                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  1.9000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  40.91915  39.74973  40.26533    C   1 1 -0.35190
+HETATM     2 O                  39.17273  40.23071  39.70448    O   1 1 -0.34876
+HETATM     3 H                  40.76681  38.78675  40.76959    H   1 1  0.11733
+HETATM     4 H                  38.73221  40.26229  40.49424    H   1 1  0.34876
+HETATM     5 H                  41.20237  40.56754  40.94046    H   1 1  0.11733
+HETATM     6 H                  41.48678  39.70089  39.32754    H   1 1  0.11725
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     3     5     6
+CONECT     2     1     4
+CONECT     3     1
+CONECT     4     2
+CONECT     5     1
+CONECT     6     1
+UNIT ENERGY   kcal
+ENERGY        -465.253094
+END
+ 
+BIOGRF 200
+DESCRP co52                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  2.0000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  40.96907  39.74427  40.28442    C   1 1 -0.35253
+HETATM     2 O                  39.12900  40.23839  39.68774    O   1 1 -0.34886
+HETATM     3 H                  40.83132  38.75342  40.73640    H   1 1  0.11755
+HETATM     4 H                  38.67960  40.21877  40.47174    H   1 1  0.34886
+HETATM     5 H                  41.22191  40.53254  41.00535    H   1 1  0.11755
+HETATM     6 H                  41.55518  39.75584  39.35673    H   1 1  0.11744
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     3     5     6
+CONECT     2     1     4
+CONECT     3     1
+CONECT     4     2
+CONECT     5     1
+CONECT     6     1
+UNIT ENERGY   kcal
+ENERGY        -453.849870
+END
+ 
+BIOGRF 200
+DESCRP co53                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  2.1000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  41.01355  39.71019  40.29542    C   1 1 -0.35395
+HETATM     2 O                  39.08926  40.26970  39.67795    O   1 1 -0.34893
+HETATM     3 H                  40.86098  38.71619  40.73629    H   1 1  0.11804
+HETATM     4 H                  38.64305  40.24693  40.46332    H   1 1  0.34893
+HETATM     5 H                  41.28236  40.48480  41.02577    H   1 1  0.11803
+HETATM     6 H                  41.60275  39.72140  39.36932    H   1 1  0.11788
+FORMAT CONECT (a6,12i6)
+CONECT     1     2     3     5     6
+CONECT     2     1     4
+CONECT     3     1
+CONECT     4     2
+CONECT     5     1
+CONECT     6     1
+UNIT ENERGY   kcal
+ENERGY        -443.452161
+END
+ 
+BIOGRF 200
+DESCRP co54                                                        
+REMARK                                                             
+RUTYPE NORMAL RUN
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    1   2  2.8000 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 C                  41.34147  39.62620  40.46913    C   1 1 -0.36097
+HETATM     2 O                  38.79776  40.34113  39.54296    O   1 1 -0.34894
+HETATM     3 H                  41.43382  38.60333  40.86097    H   1 1  0.12043
+HETATM     4 H                  38.29017  40.31218  40.29140    H   1 1  0.34894
+HETATM     5 H                  41.79193  40.39513  41.11271    H   1 1  0.12042
+HETATM     6 H                  41.59618  39.72501  39.40418    H   1 1  0.12012
+FORMAT CONECT (a6,12i6)
+CONECT     1     3     5     6
+CONECT     2     4
+CONECT     3     1
+CONECT     4     2
+CONECT     5     1
+CONECT     6     1
+UNIT ENERGY   kcal
+ENERGY        -413.510788
+END

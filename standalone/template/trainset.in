@@ -1,0 +1,27 @@
+CHARGE
+#Keyw Weight Atom (a5,1x,f6.2,1x,i4)
+h3coh_min  0.050 1      0.2000  
+h3coh_min  0.050 2     -0.4000  
+h3coh_min  0.050 3      0.0500  
+h3coh_min  0.050 4      0.3000  
+h3coh_min  0.050 5      0.0500  
+h3coh_min  0.050 6      0.0500  
+ENDCHARGE
+ENERGY  
+# Restraint CO_single_bond_dissociation
+250.0  +   h3coh_min /1   -   co40 /1                            -683.20
+125.0  +   h3coh_min /1   -   co41 /1                            -359.10
+100.0  +   h3coh_min /1   -   co42 /1                            -179.00
+30.0   +   h3coh_min /1   -   co43 /1                            -80.20
+8.0   +   h3coh_min /1   -   co44 /1                            -30.20
+ 3.0   +   h3coh_min /1   -   co45 /1                            -7.20
+ 2.5   +   h3coh_min /1   -   co46 /1                            -0.10
+ 5.0   +   h3coh_min /1   -   co47 /1                            -2.30
+ 5.0   +   h3coh_min /1   -   co48 /1                            -9.50
+ 5.0   +   h3coh_min /1   -   co49 /1                            -19.40
+10.0   +   h3coh_min /1   -   co50 /1                            -30.30
+10.0   +   h3coh_min /1   -   co51 /1                            -41.60
+10.0   +   h3coh_min /1   -   co52 /1                            -52.60
+10.0   +   h3coh_min /1   -   co53 /1                            -63.10
+ 2.5   +   h3coh_min /1   -   co54 /1                            -95.80
+ENDENERGY
