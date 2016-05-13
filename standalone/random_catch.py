@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.4
 import os
+import signal
 import shutil
 import random
 
@@ -589,62 +590,6 @@ class Param:
             output_file.write(line)
 
 
-def get_fort13(fit_file):
-    fort13_file = fit_file + '/fort.13'
-    fort = open(fort13_file, 'r')
-
-    for line in fort:
-        sp = line.split()
-
-    try:
-        final = float(sp[0])
-        return final
-    except ValueError:
-        return 1000000000.0
-
-
-def save_new_best(fit_file):
-    best_file = fit_file + '/best'
-    sbest_file = fit_file + '/sbest'
-
-    # create new 2nd best
-    old_best_files = os.listdir(best_file)
-    for file_name in old_best_files:
-        full_file_name = best_file + '/' + file_name
-        shutil.copy(full_file_name, sbest_file)
-
-    to_copy_files = ['fort.4', 'fort.13', 'fort.99', 'ffield']
-
-    for file_name in to_copy_files:
-        full_file_name = fit_file + '/' + file_name
-        shutil.copy(full_file_name, best_file)
-
-
-def init_simulation_dir(root_dir, simulation_name, safe=False):
-    simulation_dir = root_dir + '/' + str(simulation_name)
-    if not os.path.exists(simulation_dir):
-        os.makedirs(simulation_dir)
-    else:
-        if not safe:
-            shutil.rmtree(simulation_dir)
-            os.makedirs(simulation_dir)
-        else:
-            print("Directory arledy exist!")
-            return None
-
-    template_dir = root_dir + '/' + 'template'
-    if not os.path.exists(template_dir):
-        print("Missing template file!")
-        return None
-
-    template_files = os.listdir(template_dir)
-    for file_name in template_files:
-        full_file_name = template_dir + '/' + file_name
-        shutil.copy(full_file_name, simulation_dir)
-
-
-    os.makedirs(simulation_dir + '/best')
-    os.makedirs(simulation_dir + '/sbest')
 
 
 def create_new_fit(indir, outdir):
@@ -718,74 +663,174 @@ def check_sim(i, proc_list, sim_best, sim_dir_list, sim_template):
             proc_runing = proc_runing or False
 
 
+class SimplePar:
+    def __init__(self, thread_number, sim_root, prefix='sim'):
+        self.thread_number = thread_number
+        self.sim_root = sim_root
+        self.prefix = prefix
+
+        # defaluts
+        self.template = 'template'
+        self.best = 'best'
+        self.sbest = 'sbest'
+        self.start_best = 1000000000.0
+        self.global_best = self.start_best
+        self.best_copy_list = ['fort.4', 'fort.13', 'fort.99', 'ffield',
+                               'params']
+
+        # initialize
+        self.sim_count = 1
+        self._create_dirtree()
+        self._init_data()
+
+    def _create_dirtree(self):
+        sim_root = self.sim_root
+        template_dir = sim_root + '/' + self.template
+        template_files = os.listdir(template_dir)
+
+        # create name array root dir
+        sim_name_list = []
+        sim_dir_list = []
+        for i in range(self.thread_number):
+            index = '{:02d}'.format(i+1)
+            sim_name = self.prefix + index
+            sim_name_list.append(sim_name)
+
+            sim_dir = sim_root + '/' + sim_name
+            sim_dir_list.append(sim_dir)
+
+            if os.path.exists(sim_dir):
+                shutil.rmtree(sim_dir)
+            os.makedirs(sim_dir)
+
+            for template_file in template_files:
+                full_template_name = template_dir + '/' + template_file
+                shutil.copy(full_template_name, sim_dir)
+
+            os.makedirs(sim_dir + '/' + self.best)
+            os.makedirs(sim_dir + '/' + self.sbest)
+
+        self.template_dir = template_dir
+        self.sim_name_list = sim_name_list
+        self.sim_dir_list = sim_dir_list
+
+    def _init_data(self):
+        self.thread_list = []
+        self.thread_best = []
+        self.thread_sbest = []
+        self.thread_active = []
+        self.thread_runing_num = []
+
+        for i in range(self.thread_number):
+            self.thread_list.append(None)
+            self.thread_best.append(self.start_best)
+            self.thread_sbest.append(self.start_best)
+            self.thread_active.append(False)
+            self.thread_runing_num.append(None)
+
+    def _get_fort13(self, sim_dir):
+        fort13_file = sim_dir + '/fort.13'
+        fort = open(fort13_file, 'r')
+
+        for line in fort:
+            sp = line.split()
+
+        try:
+            final = float(sp[0])
+            return final
+        except ValueError:
+            return self.start_best
+
+    def _start_thread(self, thread_id):
+        thread_info = '[{}/{}]'.format(self.sim_count, self.sim_number)
+        thread_info += ' Started!'
+        #print(thread_info)
+
+        create_new_fit(self.template_dir, self.sim_dir_list[thread_id])
+
+        sim_dir = self.sim_dir_list[thread_id]
+        proc = Popen(['./exe'], cwd=sim_dir, stdout=open('/dev/null', 'w'))
+        self.thread_list[thread_id] = proc
+
+        self.thread_runing_num[thread_id] = self.sim_count
+        self.sim_count += 1
+        self.thread_active[thread_id] = True
+
+    def _finish_thread(self, thread_id):
+        error_value = self._get_fort13(self.sim_dir_list[thread_id])
+        thread_info = bcolors.OKBLUE
+        thread_info += '[{}/{}]'.format(self.thread_runing_num[thread_id],
+                                        self.sim_number)
+        thread_info += bcolors.ENDC
+        thread_info += " Finished " + str(error_value)
+
+        if error_value < self.thread_best[thread_id]:
+            thread_info += bcolors.OKGREEN + '  NEW BEST!  ' + bcolors.ENDC
+            thread_info += 'prev(' + str(self.thread_best[thread_id]) + ')'
+            self.thread_best[thread_id] = error_value
+            self._save_new_best(thread_id)
+        else:
+            thread_info += '             prev('
+            thread_info += str(self.thread_best[thread_id]) + ')'
+
+        print(thread_info)
+
+        if error_value < self.global_best:
+            global_info = bcolors.RED + 'NEW GLOBAL BEST!  ' + bcolors.ENDC
+            global_info += str(error_value)
+            print(global_info)
+            self.global_best = error_value
+
+    def _save_new_best(self, thread_id):
+        sim_dir = self.sim_dir_list[thread_id]
+        best_dir = sim_dir + '/' + self.best
+        sbest_dir = sim_dir + '/' + self.sbest
+
+        # create new 2nd best
+        old_best_files = os.listdir(best_dir)
+        for file_name in old_best_files:
+            full_file_name = best_dir + '/' + file_name
+            shutil.copy(full_file_name, sbest_dir)
+
+        for file_name in self.best_copy_list:
+            full_file_name = sim_dir + '/' + file_name
+            shutil.copy(full_file_name, best_dir)
+
+    def _check_threads(self):
+        for thread_id in range(self.thread_number):
+            if not self.thread_active[thread_id]:
+                continue
+
+            thread_status = self.thread_list[thread_id].poll()
+            if thread_status is None:
+                continue
+
+            self._finish_thread(thread_id)
+            if self.sim_count <= self.sim_number:
+                self._start_thread(thread_id)
+            else:
+                self.thread_active[thread_id] = False
+
+        still_active = sum(self.thread_active)
+        return still_active
+
+    def run(self, sim_number):
+        self.sim_number = sim_number
+
+        # run first row of threads
+        for i in range(self.thread_number):
+            self._start_thread(i)
+
+        still_active = True
+        while still_active:
+            sleep(1)
+            still_active = self._check_threads()
 
 if __name__ == '__main__':
+    os.setpgrp()
     sim_root = os.getcwd()
-    sim_template = sim_root + '/template'
+    sp = SimplePar(4, sim_root)
 
-    sim_prefix = 'sim'
+    sp.run(5)
 
-    sim_total = 10
-    sim_number = 3
-
-    sim_name_list = []
-    sim_dir_list = []
-    sim_best = []
-
-    overall_best = 1000000000.0
-
-    # initialize basic data structure
-    for i in range(sim_number):
-        sim_index = i+1
-        marker = '{:02d}'.format(sim_index)
-        sim_name = sim_prefix + marker
-        sim_name_list.append(sim_name)
-
-        sim_dir = sim_root + '/' + sim_name
-        sim_dir_list.append(sim_dir)
-
-        sim_best.append(1000000000.0)
-
-    # initialize simulation files
-    print("Initializing {} processes\n".format(sim_number))
-    for i in range(sim_number):
-        init_simulation_dir(sim_root, sim_name_list[i])
-        create_new_fit(sim_template, sim_dir_list[i])
-
-    # first row of simulation
-    proc_list = []
-    for i in range(sim_number):
-        proc = start_new_proc(sim_dir_list[i])
-        proc_list.append(proc)
-
-    sim_count = sim_number
-    working = True
-    while working:
-        sleep(1)
-        proc_runing = False
-        for i in range(sim_number):
-            sim_index = i+1
-        working = proc_runing
-
-    for i in range(sim_number):
-        sim_index = i+1
-        final_value = get_fort13(sim_dir_list[i])
-        final_str = bcolors.RED + str(final_value) + bcolors.ENDC
-
-        name_str = bcolors.OKGREEN + sim_name_list[i] + bcolors.ENDC
-
-        print("[{}] Simulation {} final error: {}".format(sim_index, name_str,
-                                                          final_str))
-
-    #init_simulation_dir(sim_root, sim1, safe=False)
-    #create_new_fit(sim_template, sim1_dir)
-
-    #sim1_proc = Popen(['./exe'], cwd=sim1_dir)
-    #status = sim1_proc.poll()
-
-    #while status is None:
-    #    sleep(1)
-    #    print(bcolors.OKGREEN + "w8" + bcolors.ENDC + " to finish!")
-    #    status = sim1_proc.poll()
-
-    #print('final value: {}\n'.format(get_fort13(sim1_dir)))
+    os.killpg(0, signal.SIGKILL)
