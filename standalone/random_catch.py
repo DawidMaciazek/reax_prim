@@ -705,7 +705,7 @@ class SimplePar:
             param_value = param.params[param_key]
             param_ref = (param_value[0][0], param_value[0][1],
                          param_value[0][2])
-            potential.set_random(param_ref, param_value[1], param_value[2])
+            potential.set_random(param_ref, param_value[2], param_value[3])
 
         potential_output = self.sim_dir_list[thread_id] + '/ffield'
         param_output = self.sim_dir_list[thread_id] + '/params'
