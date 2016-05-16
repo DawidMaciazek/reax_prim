@@ -354,11 +354,11 @@ class Potential:
         # single atom
         for atom in range(atomic_count):
             atomic_record = self.atomic_record[atom]
-            line = '{:>2} '.format(self.atomic_element[atom])
+            line = ' {:<2} '.format(self.atomic_element[atom])
 
             cr = 0
             for i in range(8):
-                line += '{:>9.4f}'.format(atomic_record[cr])
+                line += '{:>8.4f}'.format(atomic_record[cr])
                 cr += 1
 
             line += '{:>5}\n{:>3}'.format('', '')
