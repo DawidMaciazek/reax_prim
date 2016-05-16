@@ -1,11 +1,11 @@
 # General parameters
-      1 itrans
-      1 icentr
+      0 itrans
+      0 icentr
       1 imetho     0: Normal MD-run 1: Energy minimisation 2:MD-energy minimisation
       1 igeofo     0:xyz-input geometry 1: Biograf input geometry 2: xmol-input geometry
- 80.000 axis1      a (for non-periodical systems)
- 80.000 axis2      b (for non-periodical systems)
- 80.000 axis3      c (for non-periodical systems)
+ 30.000 axis1      a (for non-periodical systems)
+ 30.000 axis2      b (for non-periodical systems)
+ 30.000 axis3      c (for non-periodical systems)
  0.0010 cutof2     BO-cutoff for valency angles and torsion angles
   0.300 cutof3     BO-cutoff for bond order for graphs
       4 icharg     Charges. 1:EEM 2:- 3: Shielded EEM (default for crystals) 4: Full system EEM 5: Fixed (unit 26) 6: Fragment EEM
@@ -49,7 +49,7 @@
 # MM-parameters
 1.00000 endmm      End point criterium for MM energy minimisation
    -001 imaxmo     Maximum movement (1/1D6 A) during minimisation 0: Conjugate gradient
-  00500 imaxit     Maximum number of iterations
+  00000 imaxit     Maximum number of iterations
     500 iout4      Frequency of structure output during minimisation
 1.00010 celopt     Cell parameter change
       0 icelo2     Change all cell parameters (0) or only x/y/z axis (1/2/3)

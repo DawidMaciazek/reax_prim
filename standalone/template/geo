@@ -1,380 +1,846 @@
+
 BIOGRF 200
-DESCRP h3coh_min
-REMARK h3coh
+DESCRP F2_sbc_1
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  40.71865  39.70621  40.11936    C   1 1 -0.12323
-HETATM     2 O                  39.33815  40.31081  39.92694    O   1 1 -0.50909
-HETATM     3 H                  40.57098  38.64567  40.40858    H   1 1  0.10783
-HETATM     4 H                  38.93362  39.81591  39.25474    H   1 1  0.27887
-HETATM     5 H                  41.19390  40.30466  40.92459    H   1 1  0.10783
-HETATM     6 H                  41.25105  39.79810  39.15070    H   1 1  0.13779
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     3     5     6
-CONECT     2     1     4
-CONECT     3     1
-CONECT     4     2
-CONECT     5     1
-CONECT     6     1
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   1.48000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -499.261772
+ENERGY       0.000000 
 END
 
 BIOGRF 200
-DESCRP co40                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  0.8000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbs_1
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  40.40848  39.94429  39.74226    C   1 1  0.28168
-HETATM     2 O                  39.62613  40.09939  39.83918    O   1 1 -0.76241
-HETATM     3 H                  40.92567  39.08221  42.21364    H   1 1  0.05760
-HETATM     4 H                  37.50569  40.41615  41.38459    H   1 1  0.27555
-HETATM     5 H                  41.10102  39.87493  42.33148    H   1 1  0.05760
-HETATM     6 H                  41.53876  39.71247  39.69120    H   1 1  0.08999
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     6
-CONECT     2     1
-CONECT     3     5
-CONECT     4
-CONECT     5     3
-CONECT     6     1
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   1.58000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -344.078034
+ENERGY       2.925400 
 END
- 
+
 BIOGRF 200
-DESCRP co41                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  0.9000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbs_2
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  40.42444  39.74794  40.10334    C   1 1  0.13120
-HETATM     2 O                  39.52876  39.86335  40.07452    O   1 1 -0.44874
-HETATM     3 H                  41.52864  39.45637  40.11454    H   1 1  0.10589
-HETATM     4 H                  37.90601  41.82903  39.24568    H   1 1  0.00000
-HETATM     5 H                  41.48059  42.12559  39.47898    H   1 1  0.10583
-HETATM     6 H                  41.51147  41.75856  38.74777    H   1 1  0.10583
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     3
-CONECT     2     1
-CONECT     3     1
-CONECT     4
-CONECT     5     6
-CONECT     6     5
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   1.78000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -353.450059
+ENERGY       18.60480 
 END
- 
+
 BIOGRF 200
-DESCRP co42                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  1.0000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbs_3
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  40.51804  40.14806  40.18301    C   1 1  0.06615
-HETATM     2 O                  39.52348  40.19718  40.05675    O   1 1 -0.61438
-HETATM     3 H                  41.19023  37.76598  39.16366    H   1 1  0.08236
-HETATM     4 H                  37.32463  39.38858  38.77728    H   1 1  0.26840
-HETATM     5 H                  41.52392  39.70872  40.45882    H   1 1  0.11511
-HETATM     6 H                  41.35737  38.24448  38.52082    H   1 1  0.08236
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     5
-CONECT     2     1
-CONECT     3     6
-CONECT     4
-CONECT     5     1
-CONECT     6     3
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   1.98000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -365.320620
+ENERGY       33.70670 
 END
- 
+
 BIOGRF 200
-DESCRP co43                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  1.1000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbs_4
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  40.56841  40.14882  40.32490    C   1 1 -0.00152
-HETATM     2 O                  39.51240  40.19900  40.00037    O   1 1 -0.57195
-HETATM     3 H                  40.96830  37.67428  39.11063    H   1 1  0.09107
-HETATM     4 H                  37.32605  39.33405  38.66066    H   1 1  0.26932
-HETATM     5 H                  41.59865  39.92806  39.91262    H   1 1  0.12202
-HETATM     6 H                  41.07944  38.13343  38.44227    H   1 1  0.09107
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     5
-CONECT     2     1
-CONECT     3     6
-CONECT     4
-CONECT     5     1
-CONECT     6     3
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   15.8000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -378.899057
+ENERGY       37.34321 
 END
- 
+
 BIOGRF 200
-DESCRP co44                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  1.2000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbc_2
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  40.56331  40.05142  40.25252    C   1 1 -0.04928
-HETATM     2 O                  39.47401  40.12037  39.75320    O   1 1 -0.53519
-HETATM     3 H                  41.63406  37.90948  39.64539    H   1 1  0.09491
-HETATM     4 H                  37.08182  40.43527  41.15892    H   1 1  0.27098
-HETATM     5 H                  40.98450  40.74490  41.05034    H   1 1  0.09491
-HETATM     6 H                  41.94207  38.38767  39.05633    H   1 1  0.12367
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     5
-CONECT     2     1
-CONECT     3     6
-CONECT     4
-CONECT     5     1
-CONECT     6     3
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   1.38000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -384.207946
+ENERGY        3.92478
 END
- 
+
 BIOGRF 200
-DESCRP co45                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  1.3000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbc_3
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  39.97234  39.95979  40.67863    C   1 1 -0.06548
-HETATM     2 O                  39.99545  40.09412  39.35206    O   1 1 -0.52746
-HETATM     3 H                  39.41595  38.96235  40.96832    H   1 1  0.09691
-HETATM     4 H                  40.48816  39.25642  38.98155    H   1 1  0.27368
-HETATM     5 H                  39.42374  40.88270  41.16477    H   1 1  0.09691
-HETATM     6 H                  41.07369  39.88340  41.09045    H   1 1  0.12544
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     3     5     6
-CONECT     2     1     4
-CONECT     3     1
-CONECT     4     2
-CONECT     5     1
-CONECT     6     1
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   1.28000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -421.297768
+ENERGY        22.8100
 END
- 
+
 BIOGRF 200
-DESCRP co46                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  1.4000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbc_4
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  40.66935  40.21323  39.81244    C   1 1 -0.10965
-HETATM     2 O                  39.38860  39.74729  40.19326    O   1 1 -0.50968
-HETATM     3 H                  41.41505  39.38202  40.00810    H   1 1  0.10422
-HETATM     4 H                  38.76210  40.47595  40.01732    H   1 1  0.27747
-HETATM     5 H                  40.91611  41.13201  40.42769    H   1 1  0.10422
-HETATM     6 H                  40.64232  40.48255  38.71228    H   1 1  0.13342
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     3     5     6
-CONECT     2     1     4
-CONECT     3     1
-CONECT     4     2
-CONECT     5     1
-CONECT     6     1
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   1.18000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -482.034999
+ENERGY        67.8736
 END
- 
+
 BIOGRF 200
-DESCRP co47                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  1.5000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbc_5
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  40.71721  39.80456  40.22096    C   1 1 -0.14453
-HETATM     2 O                  39.34618  40.18507  39.74214    O   1 1 -0.50302
-HETATM     3 H                  40.63057  38.81357  40.71668    H   1 1  0.11260
-HETATM     4 H                  38.80592  40.21934  40.49994    H   1 1  0.28233
-HETATM     5 H                  41.04725  40.58969  40.93505    H   1 1  0.11260
-HETATM     6 H                  41.35543  39.76674  39.31054    H   1 1  0.14003
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     3     5     6
-CONECT     2     1     4
-CONECT     3     1
-CONECT     4     2
-CONECT     5     1
-CONECT     6     1
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   1.08000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -498.992082
+ENERGY        158.942
 END
- 
+
 BIOGRF 200
-DESCRP co48                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  1.6000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbc_6
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  40.77021  39.79488  40.22453    C   1 1 -0.17292
-HETATM     2 O                  39.30073  40.19354  39.74022    O   1 1 -0.49328
-HETATM     3 H                  40.67398  38.80542  40.70439    H   1 1  0.11844
-HETATM     4 H                  38.79810  40.20801  40.50661    H   1 1  0.28397
-HETATM     5 H                  41.07910  40.58020  40.93616    H   1 1  0.11844
-HETATM     6 H                  41.37851  39.77637  39.30309    H   1 1  0.14535
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     3     5     6
-CONECT     2     1     4
-CONECT     3     1
-CONECT     4     2
-CONECT     5     1
-CONECT     6     1
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.98000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -495.712393
+ENERGY        332.523
 END
- 
+
 BIOGRF 200
-DESCRP co49                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  1.7000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbc_7
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  40.81349  39.78230  40.26120    C   1 1 -0.19270
-HETATM     2 O                  39.26588  40.20416  39.70735    O   1 1 -0.48483
-HETATM     3 H                  40.68303  38.79811  40.73660    H   1 1  0.12182
-HETATM     4 H                  38.76595  40.21326  40.46881    H   1 1  0.28585
-HETATM     5 H                  41.08190  40.57535  40.97580    H   1 1  0.12182
-HETATM     6 H                  41.43672  39.76451  39.35427    H   1 1  0.14804
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     3     5     6
-CONECT     2     1     4
-CONECT     3     1
-CONECT     4     2
-CONECT     5     1
-CONECT     6     1
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.88000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -487.437107
+ENERGY        657.238
 END
- 
+
 BIOGRF 200
-DESCRP co50                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  1.8000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbc_8
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  40.87038  39.77116  40.25676    C   1 1 -0.20899
-HETATM     2 O                  39.21687  40.21357  39.71212    O   1 1 -0.47801
-HETATM     3 H                  40.72619  38.78816  40.72398    H   1 1  0.12477
-HETATM     4 H                  38.76634  40.20808  40.49766    H   1 1  0.28757
-HETATM     5 H                  41.12381  40.57095  40.96491    H   1 1  0.12477
-HETATM     6 H                  41.45194  39.76723  39.32603    H   1 1  0.14989
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     3     5     6
-CONECT     2     1     4
-CONECT     3     1
-CONECT     4     2
-CONECT     5     1
-CONECT     6     1
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.78000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -477.086383
+ENERGY        1264.07
 END
- 
+
 BIOGRF 200
-DESCRP co51                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  1.9000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbc_9
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  40.91915  39.74973  40.26533    C   1 1 -0.35190
-HETATM     2 O                  39.17273  40.23071  39.70448    O   1 1 -0.34876
-HETATM     3 H                  40.76681  38.78675  40.76959    H   1 1  0.11733
-HETATM     4 H                  38.73221  40.26229  40.49424    H   1 1  0.34876
-HETATM     5 H                  41.20237  40.56754  40.94046    H   1 1  0.11733
-HETATM     6 H                  41.48678  39.70089  39.32754    H   1 1  0.11725
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     3     5     6
-CONECT     2     1     4
-CONECT     3     1
-CONECT     4     2
-CONECT     5     1
-CONECT     6     1
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.68000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -465.253094
+ENERGY        2411.87
 END
- 
+
 BIOGRF 200
-DESCRP co52                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  2.0000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbc_10
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  40.96907  39.74427  40.28442    C   1 1 -0.35253
-HETATM     2 O                  39.12900  40.23839  39.68774    O   1 1 -0.34886
-HETATM     3 H                  40.83132  38.75342  40.73640    H   1 1  0.11755
-HETATM     4 H                  38.67960  40.21877  40.47174    H   1 1  0.34886
-HETATM     5 H                  41.22191  40.53254  41.00535    H   1 1  0.11755
-HETATM     6 H                  41.55518  39.75584  39.35673    H   1 1  0.11744
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     3     5     6
-CONECT     2     1     4
-CONECT     3     1
-CONECT     4     2
-CONECT     5     1
-CONECT     6     1
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.58000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -453.849870
+ENERGY        4646.7
 END
- 
+
 BIOGRF 200
-DESCRP co53                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  2.1000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbc_11
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  41.01355  39.71019  40.29542    C   1 1 -0.35395
-HETATM     2 O                  39.08926  40.26970  39.67795    O   1 1 -0.34893
-HETATM     3 H                  40.86098  38.71619  40.73629    H   1 1  0.11804
-HETATM     4 H                  38.64305  40.24693  40.46332    H   1 1  0.34893
-HETATM     5 H                  41.28236  40.48480  41.02577    H   1 1  0.11803
-HETATM     6 H                  41.60275  39.72140  39.36932    H   1 1  0.11788
-FORMAT CONECT (a6,12i6)
-CONECT     1     2     3     5     6
-CONECT     2     1     4
-CONECT     3     1
-CONECT     4     2
-CONECT     5     1
-CONECT     6     1
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.48000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -443.452161
+ENERGY        9145.45
 END
- 
+
 BIOGRF 200
-DESCRP co54                                                        
-REMARK                                                             
-RUTYPE NORMAL RUN
-#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
-BOND RESTRAINT    1   2  2.8000 7500.00  2.0000  0.0000000       0       0
+DESCRP F2_sbc_12
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
 FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
-HETATM     1 C                  41.34147  39.62620  40.46913    C   1 1 -0.36097
-HETATM     2 O                  38.79776  40.34113  39.54296    O   1 1 -0.34894
-HETATM     3 H                  41.43382  38.60333  40.86097    H   1 1  0.12043
-HETATM     4 H                  38.29017  40.31218  40.29140    H   1 1  0.34894
-HETATM     5 H                  41.79193  40.39513  41.11271    H   1 1  0.12042
-HETATM     6 H                  41.59618  39.72501  39.40418    H   1 1  0.12012
-FORMAT CONECT (a6,12i6)
-CONECT     1     3     5     6
-CONECT     2     4
-CONECT     3     1
-CONECT     4     2
-CONECT     5     1
-CONECT     6     1
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.38000    F   0 0  0.00000
 UNIT ENERGY   kcal
-ENERGY        -413.510788
+ENERGY        18733.2
 END
+
+BIOGRF 200
+DESCRP F2_sbc_13
+REMARK Created from F2_sbc_001.xyz by Michal Kanski
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000   0.00000    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.28000    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        41631.8
+END
+
+BIOGRF 200                                                                      
+DESCRP F2_gas                                                                   
+REMARK .bgf-file generated by xtob-script                                       
+RUTYPE ENDPO 0.500                                                              
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  40.01238  39.99965  39.25684    F   0 0  0.00000
+HETATM     2 F                  39.98762  40.00035  40.74316    F   0 0  0.00000
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     2                                                              
+CONECT     2     1                                                              
+UNIT ENERGY   kcal                                                              
+ENERGY         -36.387707                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F3_gas                                                                   
+REMARK .bgf-file generated by xtob-script                                       
+RUTYPE ENDPO 0.500                                                              
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  40.60960  40.82088  40.00757    F   0 0  0.00000
+HETATM     2 F                  39.69868  39.59492  39.11041    F   0 0  0.00000
+HETATM     3 F                  39.69171  39.58420  40.88202    F   0 0  0.00000
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     2     3                                                        
+CONECT     2     1     3                                                        
+CONECT     3     1     2                                                        
+UNIT ENERGY   kcal                                                              
+ENERGY           5.509304                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F3_linear                                                                
+REMARK .bgf-file generated by xtob-script                                       
+RUTYPE ENDPO 0.500                                                              
+#               At1 At2 At3 Angle   Force1  Force2  dAngle/dIteration (MD only) 
+ANGLE RESTRAINT    1   2   3  175.00    0.00  0.1000 0.000000                   
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  40.84856  41.17301  39.15975    F   0 0  0.00000
+HETATM     2 F                  40.05029  40.07922  39.94361    F   0 0  0.00000
+HETATM     3 F                  39.10115  38.74776  40.89665    F   0 0  0.00000
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     2                                                              
+CONECT     2     1                                                              
+CONECT     3                                                                    
+UNIT ENERGY   kcal                                                              
+ENERGY         -30.357426                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F4_gas                                                                   
+REMARK .bgf-file generated by xtob-script                                       
+RUTYPE ENDPO 0.500                                                              
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  39.38663  40.04246  38.35971    F   0 0  0.00000
+HETATM     2 F                  40.61691  39.97174  41.64417    F   0 0  0.00000
+HETATM     3 F                  41.65446  39.98624  40.57994    F   0 0  0.00000
+HETATM     4 F                  38.34201  39.99955  39.41619    F   0 0  0.00000
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     4                                                              
+CONECT     2     3                                                              
+CONECT     3     2                                                              
+CONECT     4     1                                                              
+UNIT ENERGY   kcal                                                              
+ENERGY         -73.094225                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F4_linear                                                                
+REMARK .bgf-file generated by xtob-script                                       
+RUTYPE ENDPO 0.500                                                              
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    2   3  1.8000  500.00  0.2500  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  39.99857  39.99082  37.52671    F   0 0  0.00000
+HETATM     2 F                  39.99590  39.99067  39.04365    F   0 0  0.00000
+HETATM     3 F                  39.99657  40.00704  40.95617    F   0 0  0.00000
+HETATM     4 F                  40.00895  40.01148  42.47348    F   0 0  0.00000
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     2                                                              
+CONECT     2     1                                                              
+CONECT     3     4                                                              
+CONECT     4     3                                                              
+UNIT ENERGY   kcal                                                              
+ENERGY         -63.162564                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_1_10                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  1.1000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  39.39494  40.00468  40.02029    F   1 1 -0.07155
+HETATM     2 F                  40.60506  39.99532  39.97971    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     2                                                              
+CONECT     2     1                                                              
+UNIT ENERGY   kcal                                                              
+ENERGY          -1.097663                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_1_20                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  1.2000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  39.36004  40.00239  40.01646    F   1 1 -0.07155
+HETATM     2 F                  40.63996  39.99761  39.98354    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     2                                                              
+CONECT     2     1                                                              
+UNIT ENERGY   kcal                                                              
+ENERGY         -16.901433                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_1_30                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  1.3000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  39.32416  39.99928  40.01440    F   1 1 -0.07155
+HETATM     2 F                  40.67584  40.00072  39.98560    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     2                                                              
+CONECT     2     1                                                              
+UNIT ENERGY   kcal                                                              
+ENERGY         -28.232456                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_1_40                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  1.4000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  39.28855  40.01923  40.02152    F   1 1 -0.07155
+HETATM     2 F                  40.71145  39.98077  39.97848    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     2                                                              
+CONECT     2     1                                                              
+UNIT ENERGY   kcal                                                              
+ENERGY         -34.705436                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_1_43                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  1.4300  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  39.27783  40.02255  40.02873    F   1 1 -0.07155
+HETATM     2 F                  40.72217  39.97745  39.97127    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     2                                                              
+CONECT     2     1                                                              
+UNIT ENERGY   kcal                                                              
+ENERGY         -35.709795                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_1_50                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  1.5000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  39.25126  40.00824  40.01469    F   1 1 -0.07155
+HETATM     2 F                  40.74874  39.99176  39.98531    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     2                                                              
+CONECT     2     1                                                              
+UNIT ENERGY   kcal                                                              
+ENERGY         -36.319204                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_1_60                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  1.6000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  39.21394  40.00896  40.01506    F   1 1 -0.07155
+HETATM     2 F                  40.78606  39.99104  39.98494    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     2                                                              
+CONECT     2     1                                                              
+UNIT ENERGY   kcal                                                              
+ENERGY         -33.341297                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_1_70                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  1.7000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  39.17155  40.00411  40.01957    F   1 1 -0.07155
+HETATM     2 F                  40.82845  39.99589  39.98043    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     2                                                              
+CONECT     2     1                                                              
+UNIT ENERGY   kcal                                                              
+ENERGY         -26.054996                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_1_80                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  1.8000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  39.12209  40.01795  40.02735    F   1 1 -0.07155
+HETATM     2 F                  40.87791  39.98205  39.97265    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     2                                                              
+CONECT     2     1                                                              
+UNIT ENERGY   kcal                                                              
+ENERGY         -15.728699                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_1_90                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  1.9000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  39.06706  40.01504  40.02859    F   1 1 -0.07155
+HETATM     2 F                  40.93294  39.98496  39.97141    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1     2                                                              
+CONECT     2     1                                                              
+UNIT ENERGY   kcal                                                              
+ENERGY          -5.774998                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_2_00                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  2.0000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  39.00614  40.01384  40.02211    F   1 1 -0.07155
+HETATM     2 F                  40.99386  39.98616  39.97789    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1                                                                    
+CONECT     2                                                                    
+UNIT ENERGY   kcal                                                              
+ENERGY           1.078566                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_2_10                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  2.1000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  38.95087  40.01448  40.03284    F   1 1 -0.07155
+HETATM     2 F                  41.04913  39.98552  39.96716    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1                                                                    
+CONECT     2                                                                    
+UNIT ENERGY   kcal                                                              
+ENERGY           3.119968                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_2_20                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  2.2000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  38.89858  40.01519  40.03573    F   1 1 -0.07155
+HETATM     2 F                  41.10142  39.98481  39.96427    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1                                                                    
+CONECT     2                                                                    
+UNIT ENERGY   kcal                                                              
+ENERGY           3.128782                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_2_30                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  2.3000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  38.84870  40.02098  40.03730    F   1 1 -0.07155
+HETATM     2 F                  41.15130  39.97902  39.96270    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1                                                                    
+CONECT     2                                                                    
+UNIT ENERGY   kcal                                                              
+ENERGY           2.401269                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_2_50                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  2.5000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  38.74950  40.02094  40.03773    F   1 1 -0.07155
+HETATM     2 F                  41.25050  39.97906  39.96227    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1                                                                    
+CONECT     2                                                                    
+UNIT ENERGY   kcal                                                              
+ENERGY           0.853054                                                       
+END                                                                             
+                                                                                
+BIOGRF 200                                                                      
+DESCRP F2_2_70                                                                  
+REMARK                                                                          
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (M
+BOND RESTRAINT    1   2  2.7000  500.00  2.5000  0.0000000       0       0      
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)     
+HETATM     1 F                  38.65008  40.02268  40.04178    F   1 1 -0.07155
+HETATM     2 F                  41.34992  39.97732  39.95822    F   1 1 -0.07155
+FORMAT CONECT (a6,12i6)                                                         
+CONECT     1                                                                    
+CONECT     2                                                                    
+UNIT ENERGY   kcal                                                              
+ENERGY          -0.157071                                                       
+END                                                                             
+                                                                               
+BIOGRF 200
+DESCRP F2F_dbc_1
+REMARK Created from F2F_dbc_001.xyz by Michal Kanski
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.93203    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000  -0.52242    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   2.45445    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        0.000000
+END
+
+BIOGRF 200
+DESCRP F2F_dbc_72
+REMARK Created from F2F_dbc_072.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  2.2669 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.70019    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000  -0.28335    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.98353    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        1.019627
+END
+
+BIOGRF 200
+DESCRP F2F_dbc_83
+REMARK Created from F2F_dbc_083.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  2.1569 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.66620    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000  -0.24534    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.91154    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        2.034836
+END
+
+BIOGRF 200
+DESCRP F2F_dbc_90
+REMARK Created from F2F_dbc_090.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  2.0869 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.64527    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000  -0.22080    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.86607    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        3.038621
+END
+
+
+BIOGRF 200
+DESCRP F2F_dbc_96
+REMARK Created from F2F_dbc_096.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  2.0269 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.62851    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000  -0.19919    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.82769    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        4.209256
+END
+
+BIOGRF 200
+DESCRP F2F_dbc_103
+REMARK Created from F2F_dbc_103.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.9569 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.60951    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000  -0.17368    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.78319    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        6.043077
+END
+
+BIOGRF 200
+DESCRP F2F_dbc_109
+REMARK Created from F2F_dbc_109.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.8969 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.59441    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000  -0.15123    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.74564    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        8.116552
+END
+
+BIOGRF 200
+DESCRP F2F_dbc_114
+REMARK Created from F2F_dbc_114.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.8469 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.58292    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000  -0.13198    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.71490    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        10.276884
+END
+
+BIOGRF 200
+DESCRP F2F_dbc_123
+REMARK Created from F2F_dbc_123.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.7569 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.56633    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000  -0.09527    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.66160    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        15.357896
+END
+
+
+BIOGRF 200
+DESCRP F2F_dbc_130
+REMARK Created from F2F_dbc_130.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.6869 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.55907    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000  -0.06390    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.62297    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        20.480481
+END
+
+
+BIOGRF 200
+DESCRP F2F_dbc_142
+REMARK Created from F2F_dbc_142.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.5669 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.59750    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.01531    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.58219    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        30.616234
+END
+
+BIOGRF 200
+DESCRP F2F_dbc_142a
+REMARK Created from F2F_dbc_142.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.4669 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.59750    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.01531    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.48219    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        50.616234
+END
+
+BIOGRF 200
+DESCRP F2F_dbc_142b
+REMARK Created from F2F_dbc_142.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.3669 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.59750    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.01531    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.38219    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        80.616234
+END
+
+BIOGRF 200
+DESCRP F2F_dbc_142c
+REMARK Created from F2F_dbc_142.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.2669 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.59750    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.01531    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.28219    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY       120.616234
+END
+
+BIOGRF 200
+DESCRP F2F_dbc_142d
+REMARK Created from F2F_dbc_142.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.2669 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.59750    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.01531    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.18219    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY       170.616234
+END
+
+BIOGRF 200
+DESCRP F2F_dbc_143
+REMARK Created from F2F_dbc_143.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.5569 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -2.21035    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.32674    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.88361    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        6.108622
+END
+
+
+BIOGRF 200
+DESCRP F2F_dbc_157
+REMARK Created from F2F_dbc_157.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.4169 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -2.31708    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.45010    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.86698    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        -0.016918
+END
+
+
+BIOGRF 200
+DESCRP F2F_dbc_163
+REMARK Created from F2F_dbc_163.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.3569 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -2.36111    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.50212    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.85899    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        1.182335
+END
+
+
+BIOGRF 200
+DESCRP F2F_dbc_167
+REMARK Created from F2F_dbc_167.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.3169 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -2.37004    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.52658    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.84346    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        4.044032
+END
+
+
+BIOGRF 200
+DESCRP F2F_dbc_172
+REMARK Created from F2F_dbc_172.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.2669 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -2.37487    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.55400    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.82087    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        10.760259
+END
+
+
+BIOGRF 200
+DESCRP F2F_dbc_178
+REMARK Created from F2F_dbc_178.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.2069 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -2.37638    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.58475    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.79163    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        25.009049
+END
+
+
+BIOGRF 200
+DESCRP F2F_dbc_183
+REMARK Created from F2F_dbc_183.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.1569 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -2.37300    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.60806    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.76494    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        43.869071
+END
+
+
+BIOGRF 200
+DESCRP F2F_dbc_189
+REMARK Created from F2F_dbc_189.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.0969 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -2.35282    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.62797    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.72484    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        78.044723
+END
+
+
+BIOGRF 200
+DESCRP F2F_dbc_196
+REMARK Created from F2F_dbc_196.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  1.0269 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -2.18560    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.57936    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.60624    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        140.345831
+END
+
+
+BIOGRF 200
+DESCRP F2F_dbc_209
+REMARK Created from F2F_dbc_209.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  0.8969 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.88473    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.49393    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.39080    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        361.571371
+END
+
+
+BIOGRF 200
+DESCRP F2F_dbc_221
+REMARK Created from F2F_dbc_221.xyz by Michal Kanski
+#              At1 At2   R12    Force1  Force2  dR12/dIter(MD) Start (MD) End (MD)
+BOND RESTRAINT    2   3  0.7769 7500.00  2.0000  0.0000000       0       0
+FORMAT ATOM   (a6,1x,i5,1x,a5,1x,a3,1x,a1,1x,a5,3f10.5,1x,a5,i3,i2,1x,f8.5)
+HETATM     1 F                   0.00000   0.00000  -1.72457    F   0 0  0.00000
+HETATM     2 F                   0.00000   0.00000   0.47385    F   0 0  0.00000
+HETATM     3 F                   0.00000   0.00000   1.25072    F   0 0  0.00000
+UNIT ENERGY   kcal
+ENERGY        802.177570
+END
+

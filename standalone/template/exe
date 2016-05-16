@@ -1,4 +1,5 @@
 #!/bin/csh
+rm fort.*
 if (-f xmolout) rm xmolout
 if (-f molfra.out) rm molfra.out
 if (-f thermo.out) rm thermo.out

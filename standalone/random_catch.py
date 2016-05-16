@@ -1,8 +1,9 @@
 #!/usr/bin/env python3.4
 import os
-import signal
 import shutil
 import random
+import argparse
+import logging
 
 from collections import OrderedDict
 from subprocess import Popen
@@ -590,82 +591,10 @@ class Param:
             output_file.write(line)
 
 
-
-
-def create_new_fit(indir, outdir):
-    print("creating new fit!")
-    potential_input = indir + '/ffield'
-    param_input = indir + '/params'
-    potential = Potential(potential_input)
-    param = Param(param_input)
-
-    potential_output = outdir + '/ffield'
-    param_output = outdir + '/params'
-
-    # --- user defined ---
-    potential.set_random((3, 4, 1), 0.1, 250)
-    potential.set_random((3, 4, 2), 0.1, 250)
-    potential.set_random((3, 4, 3), 0.1, 250)
-
-
-    param.add((3, 4, 1), 0.01, 0.1, 250)
-    param.add((3, 4, 2), 0.01, 0.1, 250)
-    param.add((3, 4, 3), 0.01, 0.1, 250)
-
-    # --------------------
-
-    potential.write(potential_output)
-    param.write_random_order(param_output, 300)
-
-
-def start_new_proc(process_dir):
-    proc = Popen(['./exe'], cwd=process_dir, stdout=open('/dev/null', 'w'))
-    return proc
-
-
-def check_sim(i, proc_list, sim_best, sim_dir_list, sim_template):
-    return_status = proc_list[i].poll()
-
-
-    if return_status is None:
-        # this process still runing
-        proc_runing = True
-
-    else:
-        # this process finished
-        # 1 check values
-        sim_file = sim_dir_list[i]
-        value_cr = get_fort13(sim_file)
-
-        local_best = False
-        if value_cr < sim_best[i]:
-            sim_best[i] = value_cr
-            local_best = True
-
-        if value_cr < overall_best:
-            line = bcolors.OKBLUE + "NEW best: " + bcolors.ENDC
-            line += str(value_cr) + "   (" + str(overall_best) + ")"
-            print(line)
-            overall_best = value_cr
-
-        index_str = bcolors.OKBLUE + str(sim_index) + bcolors.ENDC
-
-        if sim_count < sim_total:
-            line = '[{}] Process finshed with value:{}   (local best:{})'.format(index_str, value_cr, sim_best[i])
-            print(line)
-            print("Starting another simulation ({}/{})".format(sim_count, sim_total))
-            proc_runing = True
-            # 1 check if b
-            sim_count+=1
-
-        else:
-
-            proc_runing = proc_runing or False
-
-
 class SimplePar:
-    def __init__(self, thread_number, sim_root, prefix='sim'):
+    def __init__(self, thread_number, params_repeat, sim_root, prefix='sim'):
         self.thread_number = thread_number
+        self.params_repeat = params_repeat
         self.sim_root = sim_root
         self.prefix = prefix
 
@@ -679,9 +608,27 @@ class SimplePar:
                                'params']
 
         # initialize
-        self.sim_count = 1
+        self._init_log()
         self._create_dirtree()
         self._init_data()
+        self.sim_count = 1
+
+    def _init_log(self):
+        self.logfile = self.sim_root + '/fitting.log'
+        log = logging.getLogger()
+        log.setLevel(logging.INFO)
+
+        # stdout handler
+        handler = logging.StreamHandler()
+        handler.setLevel(logging.INFO)
+        log.addHandler(handler)
+
+        # logfile
+        handler = logging.FileHandler(self.logfile, 'w', delay='true')
+        handler.setLevel(logging.INFO)
+        log.addHandler(handler)
+
+        self.log = log
 
     def _create_dirtree(self):
         sim_root = self.sim_root
@@ -730,7 +677,10 @@ class SimplePar:
 
     def _get_fort13(self, sim_dir):
         fort13_file = sim_dir + '/fort.13'
-        fort = open(fort13_file, 'r')
+        try:
+            fort = open(fort13_file, 'r')
+        except FileNotFoundError:
+            return self.start_best
 
         for line in fort:
             sp = line.split()
@@ -744,10 +694,26 @@ class SimplePar:
     def _start_thread(self, thread_id):
         thread_info = '[{}/{}]'.format(self.sim_count, self.sim_number)
         thread_info += ' Started!'
-        #print(thread_info)
 
-        create_new_fit(self.template_dir, self.sim_dir_list[thread_id])
+        # create new set of params and potetial
+        potential_template = self.template_dir + '/ffield'
+        param_template = self.template_dir + '/params'
 
+        potential = Potential(potential_template)
+        param = Param(param_template)
+        for param_key in param.params.keys():
+            param_value = param.params[param_key]
+            param_ref = (param_value[0][0], param_value[0][1],
+                         param_value[0][2])
+            potential.set_random(param_ref, param_value[1], param_value[2])
+
+        potential_output = self.sim_dir_list[thread_id] + '/ffield'
+        param_output = self.sim_dir_list[thread_id] + '/params'
+
+        potential.write(potential_output)
+        param.write_random_order(param_output, self.params_repeat)
+
+        # launch thread
         sim_dir = self.sim_dir_list[thread_id]
         proc = Popen(['./exe'], cwd=sim_dir, stdout=open('/dev/null', 'w'))
         self.thread_list[thread_id] = proc
@@ -758,10 +724,10 @@ class SimplePar:
 
     def _finish_thread(self, thread_id):
         error_value = self._get_fort13(self.sim_dir_list[thread_id])
-        thread_info = bcolors.OKBLUE
-        thread_info += '[{}/{}]'.format(self.thread_runing_num[thread_id],
-                                        self.sim_number)
-        thread_info += bcolors.ENDC
+        thread_info = '[{}/{}]'.format(
+            self.thread_runing_num[thread_id], self.sim_number)
+        thread_info += bcolors.OKBLUE + \
+            ' <{}>'.format(self.sim_name_list[thread_id]) + bcolors.ENDC
         thread_info += " Finished " + str(error_value)
 
         if error_value < self.thread_best[thread_id]:
@@ -773,12 +739,12 @@ class SimplePar:
             thread_info += '             prev('
             thread_info += str(self.thread_best[thread_id]) + ')'
 
-        print(thread_info)
+        self.log.info(thread_info)
 
         if error_value < self.global_best:
             global_info = bcolors.RED + 'NEW GLOBAL BEST!  ' + bcolors.ENDC
             global_info += str(error_value)
-            print(global_info)
+            self.log.info(global_info)
             self.global_best = error_value
 
     def _save_new_best(self, thread_id):
@@ -814,6 +780,20 @@ class SimplePar:
         still_active = sum(self.thread_active)
         return still_active
 
+    def _print_summary(self):
+        summary_info = bcolors.OKGREEN + '\n\nAll threads have finished\n\n' \
+            + bcolors.ENDC
+        summary_info += bcolors.OKBLUE + 'Thread top list' + bcolors.ENDC
+        self.log.info(summary_info)
+
+        thread_best = self.thread_best
+        best_id = sorted(range(len(thread_best)), key=lambda x: thread_best[x])
+        for thread_id in best_id:
+            thread_info = self.sim_name_list[thread_id] + ' : '
+            thread_info += str(self.thread_best[thread_id])
+            self.log.info(thread_info)
+
+
     def run(self, sim_number):
         self.sim_number = sim_number
 
@@ -826,11 +806,21 @@ class SimplePar:
             sleep(1)
             still_active = self._check_threads()
 
+        self._print_summary()
+
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('simulation_number', action='store', type=int)
+    parser.add_argument('thread_number', action='store', type=int)
+    parser.add_argument('params_repeat', nargs='?', action='store', type=int,
+                        default=300)
+
+    args = parser.parse_args()
+
     os.setpgrp()
     sim_root = os.getcwd()
-    sp = SimplePar(4, sim_root)
+    sp = SimplePar(args.thread_number, args.params_repeat, sim_root)
 
-    sp.run(5)
+    sp.run(args.simulation_number)
 
-    os.killpg(0, signal.SIGKILL)
+    #os.killpg(0, signal.SIGKILL)

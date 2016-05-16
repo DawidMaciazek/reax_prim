@@ -1,27 +1,24 @@
-CHARGE
-#Keyw Weight Atom (a5,1x,f6.2,1x,i4)
-h3coh_min  0.050 1      0.2000  
-h3coh_min  0.050 2     -0.4000  
-h3coh_min  0.050 3      0.0500  
-h3coh_min  0.050 4      0.3000  
-h3coh_min  0.050 5      0.0500  
-h3coh_min  0.050 6      0.0500  
-ENDCHARGE
-ENERGY  
-# Restraint CO_single_bond_dissociation
-250.0  +   h3coh_min /1   -   co40 /1                            -683.20
-125.0  +   h3coh_min /1   -   co41 /1                            -359.10
-100.0  +   h3coh_min /1   -   co42 /1                            -179.00
-30.0   +   h3coh_min /1   -   co43 /1                            -80.20
-8.0   +   h3coh_min /1   -   co44 /1                            -30.20
- 3.0   +   h3coh_min /1   -   co45 /1                            -7.20
- 2.5   +   h3coh_min /1   -   co46 /1                            -0.10
- 5.0   +   h3coh_min /1   -   co47 /1                            -2.30
- 5.0   +   h3coh_min /1   -   co48 /1                            -9.50
- 5.0   +   h3coh_min /1   -   co49 /1                            -19.40
-10.0   +   h3coh_min /1   -   co50 /1                            -30.30
-10.0   +   h3coh_min /1   -   co51 /1                            -41.60
-10.0   +   h3coh_min /1   -   co52 /1                            -52.60
-10.0   +   h3coh_min /1   -   co53 /1                            -63.10
- 2.5   +   h3coh_min /1   -   co54 /1                            -95.80
+ENERGY
+0.146 - F2_sbc_1 /1 + F2_sbs_1 /1 2.925400
+0.430 - F2_sbc_1 /1 + F2_sbs_2 /1 18.60480
+0.685 - F2_sbc_1 /1 + F2_sbs_3 /1 33.70670
+0.367 - F2_sbc_1 /1 + F2_sbs_4 /1 37.34321
+0.196 - F2_sbc_1 /1 + F2_sbc_2 /1 3.92478
+1.141 - F2_sbc_1 /1 + F2_sbc_3 /1 22.8100
+3.394 - F2_sbc_1 /1 + F2_sbc_4 /1 67.8736
+7.947 - F2_sbc_1 /1 + F2_sbc_5 /1 158.942
+16.626 - F2_sbc_1 /1 + F2_sbc_6 /1 332.523
+32.862 - F2_sbc_1 /1 + F2_sbc_7 /1 657.238
+63.203 - F2_sbc_1 /1 + F2_sbc_8 /1 1264.07
+120.594 - F2_sbc_1 /1 + F2_sbc_9 /1 2411.87
+232.335 - F2_sbc_1 /1 + F2_sbc_10 /1 4646.7
+457.273 - F2_sbc_1 /1 + F2_sbc_11 /1 9145.45
+936.660 - F2_sbc_1 /1 + F2_sbc_12 /1 18733.2
+2081.590 - F2_sbc_1 /1 + F2_sbc_13 /1 41631.8
+0.25 +  F2_gas /1                                        -37.34
+0.2  +  F3_linear /3 -F2_gas /2                           10.0
+2.5  +  F3_gas /3 -F2_gas /2                              20.0
+2.0  +  F4_gas /4 -F2_gas /2                             20.0
+0.2  +  F4_linear /4 -F2_gas /2                           5.0
+0.25  +   F2_gas /1 -   F1 /1 - F1/1                     -37.34
 ENDENERGY
