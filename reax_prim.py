@@ -1,4 +1,5 @@
 import random
+import math
 from collections import OrderedDict
 
 
@@ -10,6 +11,27 @@ class Potential:
         self.read(input)
 
     def __getitem__(self, key):
+        # get whole list
+        if isinstance(key, int):
+            s = key - 1
+            if s == 0:
+                return self.general_record
+            elif s == 1:
+                return self.atomic_record
+            elif s == 2:
+                return self.bond_record
+            elif s == 3:
+                return self.odiagonal_record
+            elif s == 4:
+                return self.angle_record
+            elif s == 5:
+                return self.torsion_record
+            elif s == 6:
+                return self.hbond_record
+            else:
+                None
+
+        # get single item
         s = key[0]-1  # section
         r = key[1]-1  # record
         if s != 0:
@@ -510,6 +532,20 @@ class Param:
         if input:
             self.read(input)
 
+    def __getitem__(self, key):
+        if isinstance(key, str):
+            key_string = key
+        else:
+            if len(key) == 2:
+                key = (key[0], key[1], 1)
+            key_string = '{0}-{1}-{2}'.format(*key)
+
+        params = self.params
+        if key_string in params:
+            return params[key_string]
+        else:
+            return None
+
     def read(self, input_name):
         input_file = open(input_name, 'r')
 
@@ -569,3 +605,123 @@ class Param:
                 par[4])
 
             output_file.write(line)
+
+
+class col:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    RED = '\033[31m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    END = '\033[0m'
+
+    def disable(self):
+        self.HEADER = ''
+        self.BLUE = ''
+        self.GREEN = ''
+        self.RED = ''
+        self.WARNING = ''
+        self.FAIL = ''
+        self.END = ''
+
+
+class Compare:
+    def __init__(self, potential_a, potential_b, params=None,
+                 diff_cut=0.0001, bar_size=40):
+        self.pot_a = potential_a
+        self.pot_b = potential_b
+
+        self.params = params
+
+        self.bar_size = bar_size
+        self.print_all = True
+
+        # difference cutoff
+        self.diff_cut = diff_cut
+
+    def compare(self):
+        pot_a = self.pot_a
+        pot_b = self.pot_b
+
+        # compare general
+        a_general = pot_a[1]
+        b_general = pot_b[1]
+        if len(a_general) != len(b_general):
+            print("Work in progress ...")
+
+        for r in range(len(a_general)):
+            index = (1, r+1)
+            self.compare_single(index)
+
+        # compare rest
+        for s in range(1,7):
+            a_section = pot_a[s+1]
+            #b_section = pot_b[s]
+            #print("Work in progress ...")
+            for r in range(len(a_section)):
+                for f in range(len(a_section[1])):
+                    index = (s+1, r+1, f+1)
+                    self.compare_single(index)
+
+    def compare_single(self, index):
+        pot_a_val = self.pot_a[index]
+        pot_b_val =  self.pot_b[index]
+
+        # init info string
+        info_str = '({}, {}'.format(index[0], index[1])
+        if len(index) > 2:
+            info_str += ', {}'.format(index[2])
+        info_str += ')'
+        info_str = '{:<10}'.format(info_str)
+
+        # check diffrence
+        diff_val = pot_a_val - pot_b_val
+
+        if diff_val*diff_val < self.diff_cut*self.diff_cut:
+            diff_flag = False
+        else:
+            diff_flag = True
+
+        info_str += col.GREEN + ' @={:<8.4f}'.format(pot_a_val) + col.END
+        info_str += col.RED + ' #={:<8.4f}'.format(pot_b_val) + col.END
+        info_str += ' | ' + col.BLUE + 'd={:<8.4f}'.format(diff_val) + col.END
+        info_str += '  '
+
+        # get params values
+        params = self.params
+        if params and params[index]:
+            min_param = min(params[index][2:4])
+            max_param = max(params[index][2:4])
+        else:
+            return
+
+        # create diff bar
+        bar_size = self.bar_size
+        bar_delta = (max_param-min_param)/bar_size
+
+
+        bar_a_index = (-min_param+pot_a_val)/bar_delta
+        bar_a_index = int(math.floor(bar_a_index))
+
+        if bar_a_index >= bar_size: bar_a_index = bar_size - 1
+
+        bar_b_index = (-min_param+pot_b_val)/bar_delta
+        bar_b_index = int(math.floor(bar_b_index))
+        if bar_b_index >= bar_size: bar_b_index = bar_size - 1
+
+        diff_bar = [' ']*bar_size
+        if bar_a_index == bar_b_index:
+            diff_bar[bar_a_index] = col.BLUE + '&' + col.END
+        else:
+            diff_bar[bar_a_index] = col.GREEN + '@' + col.END
+            diff_bar[bar_b_index] = col.RED + '#' + col.END
+
+        diff_bar = '[' + ''.join(diff_bar) + ']'
+        diff_bar = '<{:>8.4f}{}{:>8.4f}>'.format(min_param, diff_bar, max_param)
+
+        info_str += diff_bar
+        if diff_flag or self.print_all:
+            print(info_str)
+
+
